@@ -6,12 +6,13 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	var msgParts = message.split(" ");	
+	var msgParts = message.split(" ");
+	var channel = message.channel();
 	
-	if (msgParts[1] === 'bot') {
-		switch (msgParts[2]) {
+	if (msgParts[0] === 'bot') {
+		switch (msgParts[1]) {
 		case "ping":
-			message.channel.send('pong');
+			channel.send('pong');
 			break;
 		case "userConfig"
 			break;
@@ -42,7 +43,7 @@ client.on('message', message => {
 		case "help"
 			break;
 		default:
-			message.channel.send('Sorry dude, i don\'t understand "' + msgParts[2] + '"');		
+			channel.send('Sorry dude, i don\'t understand "' + msgParts[1] + '"');		
 		}
 	}
 });
