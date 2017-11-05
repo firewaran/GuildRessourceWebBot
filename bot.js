@@ -8,8 +8,8 @@ client.on('ready', () => {
 client.on('message', message => {
 	var msgParts = message.split(" ");	
 	
-	if (msgParts[0] === 'bot') {
-		switch (msgParts[1]) {
+	if (msgParts[1] === 'bot') {
+		switch (msgParts[2]) {
 		case "ping":
 			message.channel.send('pong');
 			break;
@@ -42,7 +42,7 @@ client.on('message', message => {
 		case "help"
 			break;
 		default:
-			message.channel.send('Sorry dude, i don\'t understand "' + msgParts[1] + '"');		
+			message.channel.send('Sorry dude, i don\'t understand "' + msgParts[2] + '"');		
 		}
 	}
 });
