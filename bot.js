@@ -1,21 +1,41 @@
+/* Required Environment Variables:
+ --------
+	DATABASE_URL		: The postgres storage, will be automatically set.
+	
+---------	
+	BOT_TOKEN			: The App Bot User Token from the Discord Apps Homepage.
+*/
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+const postgres = require('pg');
+const db = new postgres({
+	  connectionString: process.env.DATABASE_URL,
+	  ssl: true,
+	});
+
+const members = require('member.js');
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-	var msgParts = message.content.split(" ");
+    // So the bot doesn't reply to iteself
+    if (message.author.bot) return;	
 	
+    const member = new Member(message.author.id);
+    
 	if (msgParts[0] === 'bot') {
 		switch (msgParts[1]) {
 		case "ping":
 			message.channel.send('pong');
 			break;
-		case "userConfig":
+		case "userConfig":		
 			break;
 		case "credits":
+			message.channel.send('This bot is a creation of <members>\r\nCodebase:\r\nhttps://github.com/\r\nDiscord:\r\nhttps://discord.gg/');
 			break;
 		case "checkTypes":
 			break;
@@ -47,5 +67,5 @@ client.on('message', message => {
 	}
 });
 
-// Login and Run the bot.
+// Start the Bot
 client.login(process.env.BOT_TOKEN);
