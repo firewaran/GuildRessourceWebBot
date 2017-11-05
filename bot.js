@@ -21,7 +21,7 @@ const db = new Client({
 });
 
 
-const members = require('member.js');
+const members = require('.\member.js');
 
 client.on('ready', () => {
     console.log('I am ready!');
