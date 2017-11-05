@@ -7,44 +7,42 @@ client.on('ready', () => {
 
 client.on('message', message => {
 	var msgParts = message.content.split(" ");
-	var msgChannel = message.channel;
 	
 	if (msgParts[0] === 'bot') {
 		switch (msgParts[1]) {
 		case "ping":
-			msgChannel.send('pong');
+			message.channel.send('pong');
 			break;
-		case "userConfig"
+		case "userConfig":
 			break;
-		case "credits"
+		case "credits":
 			break;
-		case "checkTypes"
+		case "checkTypes":
 			break;
-		case "nativeStatus"
+		case "nativeStatus":
 			break;
-		case "info"
+		case "info":
 			break;
-		case "config"
+		case "config":
 			break;
-		case "total"
+		case "total":
 			break;
-		case "users"
+		case "users":
 			break;		
-		case "shutdown"
+		case "shutdown":
 			break;
-		case "update"
+		case "update":
 			break;		
-		case "clear"
+		case "clear":
 			break;
-		case "check"
+		case "check":
 			break;
-		case "status"
+		case "status":
 			break;
-		case "help"
+		case "help":
 			break;
 		default:
-			msgChannel.send('Sorry dude, i don\'t understand "' + msgParts[1] + '"');		
-			break;
+			message.channel.send('Sorry dude, i don\'t understand "' + msgParts[1] + '"');		
 		}
 	}
 });
