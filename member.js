@@ -1,6 +1,6 @@
 // Member Class
 
-var member = {
+var Member = {
 		
 	discordID: "",
 	language: "",

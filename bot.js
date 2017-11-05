@@ -4,6 +4,11 @@
 	
 ---------	
 	BOT_TOKEN			: The App Bot User Token from the Discord Apps Homepage.
+	
+---------
+    Discord.js Documentation:
+    	https://discord.js.org/#/docs/main/stable/general/welcome
+    	
 */
 
 const Discord = require('discord.js');
