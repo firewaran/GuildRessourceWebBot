@@ -44,6 +44,7 @@ client.on('message', message => {
 			break;
 		default:
 			msgChannel.send('Sorry dude, i don\'t understand "' + msgParts[1] + '"');		
+			break;
 		}
 	}
 });
